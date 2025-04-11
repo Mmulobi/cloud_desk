@@ -31,7 +31,7 @@ const PricingPage = () => {
       name: 'Basic',
       description: 'Perfect for small businesses and startups',
       monthlyPrice: 10800, // $108.00
-      yearlyPrice: 103680, // $1,036.80 (20% off yearly)
+      yearlyPrice: 103600, // $1,036.80 (20% off yearly)
       features: [
         '40 hours/month of virtual assistance',
         'Email management',
