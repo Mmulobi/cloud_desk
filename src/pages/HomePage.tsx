@@ -235,7 +235,7 @@ const HomePage = () => {
               >
                 <div className="absolute inset-0 bg-primary-300 rounded-full blur-3xl opacity-20 transform-gpu"></div>
                 <img 
-                  src="/logo-color.png" 
+                  src="/logo-grayscale.png" 
                   alt="Cloud Desk Logo"
                   className="relative z-10 w-full max-w-sm mx-auto p-4 transform-gpu rounded-full"
                 />
