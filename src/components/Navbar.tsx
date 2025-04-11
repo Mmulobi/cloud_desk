@@ -50,6 +50,13 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">
+            <Link 
+              to="/about" 
+              className="px-3 py-2 rounded-md font-bold text-white hover:text-primary-200"
+            >
+              About
+            </Link>
+
             <div className="relative group">
               <button 
                 onClick={() => setServicesDropdown(!servicesDropdown)}
@@ -186,12 +193,6 @@ const Navbar = () => {
             >
               Pricing
             </Link>
-            <Link 
-              to="/about" 
-              className="px-3 py-2 rounded-md font-bold text-white hover:text-primary-200"
-            >
-              About
-            </Link>
             
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -228,6 +229,14 @@ const Navbar = () => {
             style={{ transformOrigin: 'top' }}
           >
             <div className="py-3 space-y-1">
+              <Link
+                to="/about"
+                className="block px-4 py-3 text-white hover:text-primary-200"
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+
               <div>
                 <button
                   onClick={() => setServicesDropdown(!servicesDropdown)}
@@ -363,13 +372,6 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 Pricing
-              </Link>
-              <Link
-                to="/about"
-                className="block px-4 py-3 text-white hover:text-primary-200"
-                onClick={() => setIsOpen(false)}
-              >
-                About
               </Link>
               <div className="px-4 pt-2 pb-3">
                 <Link
