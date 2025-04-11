@@ -29,52 +29,52 @@ const PricingPage = () => {
   const pricingPlans = [
     {
       name: 'Basic',
-      description: 'Perfect for small businesses just getting started with virtual assistance',
-      monthlyPrice: 9999,
-      yearlyPrice: 99990,
+      description: 'Perfect for small businesses and startups',
+      monthlyPrice: 10800, // $108.00
+      yearlyPrice: 103680, // $1,036.80 (20% off yearly)
       features: [
         '10 hours/month of virtual assistance',
-        'Email & calendar management',
-        'Basic customer service',
-        'Data entry & document formatting',
-        'Monday to Friday support',
-        'Single point of contact'
+        'Email management',
+        'Calendar organization',
+        'Basic data entry',
+        'Standard response time',
+        'Monday to Friday support'
       ],
       notIncluded: [
-        'Weekend support',
-        'Dedicated team',
-        'Priority response',
-        'Financial services'
+        'Weekend availability',
+        'Advanced reporting',
+        'Custom workflows'
       ],
-      cta: 'Start with Basic',
+      cta: 'Get Started',
       popular: false
     },
     {
       name: 'Premium',
-      description: 'Ideal for growing businesses with regular administrative needs',
-      monthlyPrice: 24999,
-      yearlyPrice: 239990,
+      description: 'Ideal for growing businesses with more complex needs',
+      monthlyPrice: 28000, // $280.00
+      yearlyPrice: 268800, // $2,688.00 (20% off yearly)
       features: [
         '30 hours/month of virtual assistance',
         'All Basic features',
-        'Bookkeeping & financial assistance',
+        'CRM management',
         'Social media scheduling',
-        'Project coordination',
-        'Dedicated VA team',
-        'Priority email support'
+        'Priority support',
+        'Basic reporting',
+        'Custom workflows'
       ],
       notIncluded: [
-        'Weekend support',
-        '24/7 availability'
+        'Weekend availability',
+        'Advanced reporting',
+        'Dedicated account manager'
       ],
-      cta: 'Choose Premium',
+      cta: 'Get Started',
       popular: true
     },
     {
       name: 'Enterprise',
       description: 'Comprehensive support for established businesses with complex needs',
-      monthlyPrice: 49999,
-      yearlyPrice: 479990,
+      monthlyPrice: 50000, // $500.00
+      yearlyPrice: 480000, // $4,800.00 (20% off yearly)
       features: [
         '60 hours/month of virtual assistance',
         'All Premium features',
@@ -92,7 +92,7 @@ const PricingPage = () => {
   ];
 
   const formatPrice = (price: number): string => {
-    return `KSH ${(price / 100).toLocaleString()}`;
+    return `$${(price / 100).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
   };
 
   return (
