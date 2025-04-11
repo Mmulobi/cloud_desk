@@ -213,7 +213,7 @@ const AboutPage = () => {
                   Founded in 2025, Cloud Desk emerged with a clear vision: to revolutionize administrative support for SMEs through virtual solutions. Our journey began with a small team of passionate professionals who believed in the transformative power of remote administrative services.
                 </p>
                 <p>
-                  Today, we've grown into a leading virtual administrative support provider, serving hundreds of satisfied clients across various industries. Our commitment to innovation, reliability, and customer success remains at the core of everything we do.
+                  Today, we are rapidly establishing ourselves as a leading virtual administrative support provider, serving hundreds of satisfied clients across various industries. Our commitment to innovation, reliability, and customer success remains at the core of everything we do.
                 </p>
                 <p>
                   We take pride in our ability to deliver exceptional administrative support while maintaining the personal touch and dedication that our clients have come to expect from us. Our success is measured by the growth and success of the businesses we serve.
