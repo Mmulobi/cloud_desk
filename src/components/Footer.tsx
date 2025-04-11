@@ -182,11 +182,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Mail className="h-5 w-5 text-primary-400 mr-3 flex-shrink-0 mt-1" />
-                <span className="text-gray-400">hello@clouddesk.co.ke</span>
+                <div>
+                  <a href="mailto:info@clouddesk.co.ke" className="text-gray-400 hover:text-white transition">info@clouddesk.co.ke</a>
+                  <br />
+                  <a href="mailto:georgenandi.gn@gmail.com" className="text-gray-400 hover:text-white transition">georgenandi.gn@gmail.com</a>
+                </div>
               </li>
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-primary-400 mr-3 flex-shrink-0 mt-1" />
-                <span className="text-gray-400">+254 700 123 456</span>
+                <a href="tel:+254715045950" className="text-gray-400 hover:text-white transition">+254 715 045 950</a>
               </li>
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-primary-400 mr-3 flex-shrink-0 mt-1" />

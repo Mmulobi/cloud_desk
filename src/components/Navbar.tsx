@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-lg py-2' : 'bg-transparent py-4'
+        scrolled ? 'bg-primary-900/95 backdrop-blur-sm shadow-lg py-2' : 'bg-primary-900/95 backdrop-blur-sm py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,8 +41,8 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="flex items-center">
-              <Cloud className={`h-8 w-8 ${scrolled ? 'text-primary-600' : 'text-primary-500'}`} />
-              <span className={`ml-2 text-xl font-bold ${scrolled ? 'text-gray-800' : 'text-primary-800'}`}>
+              <Cloud className="h-8 w-8 text-white" />
+              <span className="ml-2 text-xl font-bold text-white">
                 Cloud Desk
               </span>
             </Link>
@@ -53,9 +53,7 @@ const Navbar = () => {
             <div className="relative group">
               <button 
                 onClick={() => setServicesDropdown(!servicesDropdown)}
-                className={`px-3 py-2 rounded-md flex items-center ${
-                  location.pathname === '/services' ? 'text-primary-600' : 'text-gray-600 hover:text-primary-600'
-                }`}
+                className="px-3 py-2 rounded-md flex items-center font-bold text-white hover:text-primary-200"
               >
                 <span>Services</span>
                 <ChevronDown className="ml-1 h-4 w-4" />
@@ -184,25 +182,19 @@ const Navbar = () => {
             
             <Link 
               to="/pricing" 
-              className={`px-3 py-2 rounded-md ${
-                location.pathname === '/pricing' ? 'text-primary-600' : 'text-gray-600 hover:text-primary-600'
-              }`}
+              className="px-3 py-2 rounded-md font-bold text-white hover:text-primary-200"
             >
               Pricing
             </Link>
             <Link 
               to="/about" 
-              className={`px-3 py-2 rounded-md ${
-                location.pathname === '/about' ? 'text-primary-600' : 'text-gray-600 hover:text-primary-600'
-              }`}
+              className="px-3 py-2 rounded-md font-bold text-white hover:text-primary-200"
             >
               About
             </Link>
             <Link 
               to="/contact" 
-              className={`px-3 py-2 rounded-md ${
-                location.pathname === '/contact' ? 'text-primary-600' : 'text-gray-600 hover:text-primary-600'
-              }`}
+              className="px-3 py-2 rounded-md font-bold text-white hover:text-primary-200"
             >
               Contact
             </Link>
@@ -214,11 +206,7 @@ const Navbar = () => {
             >
               <Link
                 to="/contact"
-                className={`px-4 py-2 rounded-md font-medium ${
-                  scrolled
-                    ? 'bg-primary-600 text-white hover:bg-primary-700'
-                    : 'bg-primary-500 text-white hover:bg-primary-600'
-                }`}
+                className="px-4 py-2 rounded-md font-bold bg-white text-primary-900 hover:bg-primary-50"
               >
                 Book Consultation
               </Link>
@@ -229,9 +217,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 rounded-md ${
-                scrolled ? 'text-gray-600 hover:text-gray-900' : 'text-gray-100 hover:text-white'
-              }`}
+              className="p-2 rounded-md text-white hover:text-primary-200"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -244,24 +230,24 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-white shadow-lg rounded-b-lg mt-2 transform-gpu will-change-auto"
+            className="md:hidden bg-primary-900/95 backdrop-blur-sm shadow-lg rounded-b-lg mt-2 transform-gpu will-change-auto"
             style={{ transformOrigin: 'top' }}
           >
             <div className="py-3 space-y-1">
               <div>
                 <button
                   onClick={() => setServicesDropdown(!servicesDropdown)}
-                  className="w-full flex justify-between items-center px-4 py-3 text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+                  className="w-full flex justify-between items-center px-4 py-3 text-white hover:text-primary-200"
                 >
                   <span>Services</span>
                   <ChevronDown className={`h-4 w-4 transition-transform ${servicesDropdown ? 'rotate-180' : ''}`} />
                 </button>
                 
                 {servicesDropdown && (
-                  <div className="pl-6 bg-gray-50 py-2">
+                  <div className="pl-6 bg-primary-800/50 py-2">
                     <Link
                       to="/"
-                      className="block px-4 py-2 text-sm text-gray-600 hover:text-primary-600"
+                      className="block px-4 py-2 text-sm text-white hover:text-primary-200"
                       onClick={() => {
                         setIsOpen(false);
                         if (location.pathname === '/') {
@@ -280,7 +266,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/"
-                      className="block px-4 py-2 text-sm text-gray-600 hover:text-primary-600"
+                      className="block px-4 py-2 text-sm text-white hover:text-primary-200"
                       onClick={() => {
                         setIsOpen(false);
                         if (location.pathname === '/') {
@@ -299,7 +285,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/"
-                      className="block px-4 py-2 text-sm text-gray-600 hover:text-primary-600"
+                      className="block px-4 py-2 text-sm text-white hover:text-primary-200"
                       onClick={() => {
                         setIsOpen(false);
                         if (location.pathname === '/') {
@@ -318,7 +304,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/"
-                      className="block px-4 py-2 text-sm text-gray-600 hover:text-primary-600"
+                      className="block px-4 py-2 text-sm text-white hover:text-primary-200"
                       onClick={() => {
                         setIsOpen(false);
                         if (location.pathname === '/') {
@@ -337,7 +323,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/"
-                      className="block px-4 py-2 text-sm text-gray-600 hover:text-primary-600"
+                      className="block px-4 py-2 text-sm text-white hover:text-primary-200"
                       onClick={() => {
                         setIsOpen(false);
                         if (location.pathname === '/') {
@@ -356,7 +342,7 @@ const Navbar = () => {
                     </Link>
                     <Link
                       to="/"
-                      className="block px-4 py-2 text-sm text-gray-600 hover:text-primary-600"
+                      className="block px-4 py-2 text-sm text-white hover:text-primary-200"
                       onClick={() => {
                         setIsOpen(false);
                         if (location.pathname === '/') {
@@ -379,21 +365,21 @@ const Navbar = () => {
               
               <Link
                 to="/pricing"
-                className="block px-4 py-3 text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+                className="block px-4 py-3 text-white hover:text-primary-200"
                 onClick={() => setIsOpen(false)}
               >
                 Pricing
               </Link>
               <Link
                 to="/about"
-                className="block px-4 py-3 text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+                className="block px-4 py-3 text-white hover:text-primary-200"
                 onClick={() => setIsOpen(false)}
               >
                 About
               </Link>
               <Link
                 to="/contact"
-                className="block px-4 py-3 text-gray-600 hover:bg-primary-50 hover:text-primary-600"
+                className="block px-4 py-3 text-white hover:text-primary-200"
                 onClick={() => setIsOpen(false)}
               >
                 Contact
@@ -401,7 +387,7 @@ const Navbar = () => {
               <div className="px-4 pt-2 pb-3">
                 <Link
                   to="/contact"
-                  className="block w-full px-4 py-3 text-center font-medium bg-primary-600 text-white rounded-md hover:bg-primary-700 transform-gpu"
+                  className="block w-full px-4 py-3 text-center font-bold bg-white text-primary-900 rounded-md hover:bg-primary-50 transform-gpu"
                   onClick={() => setIsOpen(false)}
                 >
                   Book Consultation

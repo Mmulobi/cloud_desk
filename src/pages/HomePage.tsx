@@ -237,7 +237,7 @@ const HomePage = () => {
                 <img 
                   src="/logo-color.png" 
                   alt="Cloud Desk Logo"
-                  className="relative z-10 w-full max-w-sm mx-auto p-4 transform-gpu"
+                  className="relative z-10 w-full max-w-sm mx-auto p-4 transform-gpu rounded-full"
                 />
               </motion.div>
             </motion.div>
@@ -262,7 +262,7 @@ const HomePage = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-primary-900 to-primary-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -271,8 +271,24 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-sm font-semibold tracking-wider text-primary-600 uppercase mb-2">Why Choose Us</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">Why SMEs Choose Cloud Desk</h3>
+            <motion.span 
+              className="text-sm font-semibold tracking-wider text-primary-300 uppercase mb-2 inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              Why Choose Us
+            </motion.span>
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-white"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              Why SMEs Choose Cloud Desk
+            </motion.h2>
           </motion.div>
           
           <motion.div 
@@ -283,40 +299,49 @@ const HomePage = () => {
             variants={staggerContainer}
           >
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-primary-800/50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
               variants={fadeInUp}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
-              <Clock className="h-12 w-12 text-primary-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Remote Work Experts</h3>
-              <p className="text-gray-600">Our team specializes in virtual administrative support, adapting to the growing trend of remote and hybrid work models.</p>
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-600/20 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                <Clock className="h-12 w-12 text-primary-300 mb-4 relative z-10" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-primary-300 transition-colors">Remote Work Experts</h3>
+              <p className="text-primary-200">Our team specializes in virtual administrative support, adapting to the growing trend of remote and hybrid work models.</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-primary-800/50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
               variants={fadeInUp}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
-              <Users className="h-12 w-12 text-primary-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Cost Efficiency</h3>
-              <p className="text-gray-600">Save up to 70% compared to hiring full-time staff, with no overhead costs for office space or equipment.</p>
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-600/20 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                <Users className="h-12 w-12 text-primary-300 mb-4 relative z-10" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-primary-300 transition-colors">Cost Efficiency</h3>
+              <p className="text-primary-200">Save up to 70% compared to hiring full-time staff, with no overhead costs for office space or equipment.</p>
             </motion.div>
             
             <motion.div 
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-primary-800/50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group backdrop-blur-sm"
               variants={fadeInUp}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
-              <TrendingUp className="h-12 w-12 text-primary-600 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Scalable Solutions</h3>
-              <p className="text-gray-600">Flexible packages that grow with your business needs, from occasional support to full administrative teams.</p>
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-600/20 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                <TrendingUp className="h-12 w-12 text-primary-300 mb-4 relative z-10" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-white group-hover:text-primary-300 transition-colors">Scalable Solutions</h3>
+              <p className="text-primary-200">Flexible packages that grow with your business needs, from occasional support to full administrative teams.</p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gradient-to-br from-primary-800 to-primary-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             className="text-center mb-16"
@@ -325,11 +350,33 @@ const HomePage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-sm font-semibold tracking-wider text-primary-600 uppercase mb-2">Our Services</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Virtual Support</h3>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <motion.span 
+              className="text-sm font-semibold tracking-wider text-primary-300 uppercase mb-2 inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              Our Services
+            </motion.span>
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-white mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              Comprehensive Virtual Support
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-primary-200 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
               Cloud Desk provides essential administrative services to help SMEs focus on core business activities
-            </p>
+            </motion.p>
           </motion.div>
           
           <motion.div 
@@ -342,7 +389,7 @@ const HomePage = () => {
             {services.map((service, index) => (
               <motion.div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 group transform-gpu"
+                className="bg-primary-800/50 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 group transform-gpu backdrop-blur-sm"
                 variants={fadeInUp}
                 whileHover={{ 
                   y: -15,
@@ -352,21 +399,21 @@ const HomePage = () => {
                 <Link to={service.link} className="block h-full">
                   <div className="p-8">
                     <div className="relative mb-8">
-                      <div className="w-20 h-20 bg-primary-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-200 transition-all duration-300 group-hover:rotate-6 transform transform-gpu">
-                        <service.icon className="w-10 h-10 text-primary-600" />
+                      <div className="w-20 h-20 bg-primary-700/30 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-600/40 transition-all duration-300 group-hover:rotate-6 transform transform-gpu">
+                        <service.icon className="w-10 h-10 text-primary-300" />
                       </div>
-                      <div className="absolute w-16 h-16 bg-primary-600/10 rounded-full -left-4 -top-4 group-hover:scale-150 transition-all duration-700 opacity-0 group-hover:opacity-30 transform-gpu"></div>
+                      <div className="absolute w-16 h-16 bg-primary-600/20 rounded-full -left-4 -top-4 group-hover:scale-150 transition-all duration-700 opacity-0 group-hover:opacity-30 transform-gpu"></div>
                     </div>
                     
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors duration-300">
+                    <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-primary-300 transition-colors duration-300">
                       {service.title}
                     </h3>
                     
-                    <p className="text-gray-600 mb-6 line-clamp-2">
+                    <p className="text-primary-200 mb-6 line-clamp-2">
                       {service.description}
                     </p>
                     
-                    <div className="flex items-center text-primary-600 font-medium group-hover:translate-x-2 transition-transform duration-300 transform-gpu">
+                    <div className="flex items-center text-primary-300 font-medium group-hover:translate-x-2 transition-transform duration-300 transform-gpu">
                       <span>Learn more</span>
                       <svg className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 transform-gpu" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5-5 5M5 7l5 5-5 5" />
