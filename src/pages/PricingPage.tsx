@@ -33,7 +33,7 @@ const PricingPage = () => {
       monthlyPrice: 10800, // $108.00
       yearlyPrice: 103680, // $1,036.80 (20% off yearly)
       features: [
-        '10 hours/month of virtual assistance',
+        '40 hours/month of virtual assistance',
         'Email management',
         'Calendar organization',
         'Basic data entry',
@@ -54,7 +54,7 @@ const PricingPage = () => {
       monthlyPrice: 28000, // $280.00
       yearlyPrice: 268800, // $2,688.00 (20% off yearly)
       features: [
-        '30 hours/month of virtual assistance',
+        '100 hours/month of virtual assistance',
         'All Basic features',
         'CRM management',
         'Social media scheduling',
@@ -76,7 +76,7 @@ const PricingPage = () => {
       monthlyPrice: 50000, // $500.00
       yearlyPrice: 480000, // $4,800.00 (20% off yearly)
       features: [
-        '60 hours/month of virtual assistance',
+        '160 hours/month of virtual assistance',
         'All Premium features',
         'HR administrative support',
         'Advanced reporting',

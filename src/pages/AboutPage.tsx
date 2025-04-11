@@ -1,55 +1,228 @@
 import React from 'react';
-import { Users, Award, Clock, Briefcase } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Users, Award, Clock, Briefcase, Target, Eye } from 'lucide-react';
+
+// Animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    transition: { duration: 0.6 }
+  }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  }
+};
+
+const scaleIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { 
+    opacity: 1, 
+    scale: 1,
+    transition: { duration: 0.6 }
+  }
+};
 
 const AboutPage = () => {
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">About Us</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          We're dedicated to delivering exceptional cloud solutions that empower businesses to thrive in the digital age.
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      {/* Hero Section */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-600/10 to-primary-900/10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.span 
+              className="text-sm font-semibold tracking-wider text-primary-600 uppercase mb-2 inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              About Cloud Desk
+            </motion.span>
+            <motion.h1 
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              Empowering SMEs Through Virtual Excellence
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              We're dedicated to delivering exceptional virtual administrative solutions that empower businesses to thrive in the digital age.
+            </motion.p>
+          </motion.div>
+        </div>
+      </section>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <Users className="w-12 h-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Expert Team</h3>
-          <p className="text-gray-600">Industry professionals with years of cloud expertise</p>
-        </div>
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <Award className="w-12 h-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Certified Partners</h3>
-          <p className="text-gray-600">Partnerships with leading cloud providers</p>
-        </div>
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <Clock className="w-12 h-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
-          <p className="text-gray-600">Round-the-clock technical assistance</p>
-        </div>
-        <div className="p-6 bg-white rounded-lg shadow-md">
-          <Briefcase className="w-12 h-12 text-blue-600 mb-4" />
-          <h3 className="text-xl font-semibold mb-2">Enterprise Solutions</h3>
-          <p className="text-gray-600">Tailored solutions for businesses of all sizes</p>
-        </div>
-      </div>
+      {/* Mission & Vision Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {/* Mission Statement */}
+            <motion.div 
+              className="bg-white rounded-2xl shadow-xl p-8 transform-gpu"
+              variants={fadeInUp}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <div className="relative mb-6">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-100 rounded-full opacity-20"></div>
+                <Target className="h-12 w-12 text-primary-600 relative z-10" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                To deliver flexible, affordable, and high-quality virtual administrative support that helps SMEs grow and succeed in a competitive digital economy. We're committed to providing reliable, efficient, and scalable solutions that enable businesses to focus on their core operations while we handle their administrative needs.
+              </p>
+            </motion.div>
 
-      <div className="bg-white rounded-lg shadow-md p-8">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Our Story</h2>
-          <div className="space-y-6 text-gray-600">
-            <p>
-              Founded in 2020, we emerged with a clear vision: to simplify cloud computing for businesses worldwide. Our journey began with a small team of passionate technologists who believed in the transformative power of cloud solutions.
-            </p>
-            <p>
-              Today, we've grown into a leading cloud services provider, serving hundreds of satisfied clients across various industries. Our commitment to innovation, reliability, and customer success remains at the core of everything we do.
-            </p>
-            <p>
-              We take pride in our ability to deliver cutting-edge solutions while maintaining the personal touch and dedication that our clients have come to expect from us.
-            </p>
-          </div>
+            {/* Vision Statement */}
+            <motion.div 
+              className="bg-white rounded-2xl shadow-xl p-8 transform-gpu"
+              variants={fadeInUp}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <div className="relative mb-6">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-100 rounded-full opacity-20"></div>
+                <Eye className="h-12 w-12 text-primary-600 relative z-10" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h2>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                To become the leading provider of cloud-based administrative solutions for SMEs in Africa and beyond. We envision a future where every small and medium-sized enterprise has access to professional administrative support, enabling them to compete effectively in the global marketplace.
+              </p>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            <motion.div 
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              variants={fadeInUp}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-100 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                <Users className="h-12 w-12 text-primary-600 mb-4 relative z-10" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Expert Team</h3>
+              <p className="text-gray-600">Industry professionals with years of virtual administrative expertise</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              variants={fadeInUp}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-100 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                <Award className="h-12 w-12 text-primary-600 mb-4 relative z-10" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Quality Service</h3>
+              <p className="text-gray-600">Consistent delivery of high-quality administrative support</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              variants={fadeInUp}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-100 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                <Clock className="h-12 w-12 text-primary-600 mb-4 relative z-10" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">24/7 Support</h3>
+              <p className="text-gray-600">Round-the-clock assistance for your administrative needs</p>
+            </motion.div>
+            
+            <motion.div 
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+              variants={fadeInUp}
+              whileHover={{ y: -10, transition: { duration: 0.3 } }}
+            >
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-100 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                <Briefcase className="h-12 w-12 text-primary-600 mb-4 relative z-10" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary-600 transition-colors">Scalable Solutions</h3>
+              <p className="text-gray-600">Flexible services that grow with your business</p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="bg-white rounded-2xl shadow-xl p-8 md:p-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="max-w-3xl mx-auto">
+              <motion.h2 
+                className="text-3xl font-bold text-center mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                Our Journey
+              </motion.h2>
+              <motion.div 
+                className="space-y-6 text-gray-600"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <p>
+                  Founded in 2025, Cloud Desk emerged with a clear vision: to revolutionize administrative support for SMEs through virtual solutions. Our journey began with a small team of passionate professionals who believed in the transformative power of remote administrative services.
+                </p>
+                <p>
+                  Today, we've grown into a leading virtual administrative support provider, serving hundreds of satisfied clients across various industries. Our commitment to innovation, reliability, and customer success remains at the core of everything we do.
+                </p>
+                <p>
+                  We take pride in our ability to deliver exceptional administrative support while maintaining the personal touch and dedication that our clients have come to expect from us. Our success is measured by the growth and success of the businesses we serve.
+                </p>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };
