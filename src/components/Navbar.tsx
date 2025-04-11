@@ -192,12 +192,6 @@ const Navbar = () => {
             >
               About
             </Link>
-            <Link 
-              to="/contact" 
-              className="px-3 py-2 rounded-md font-bold text-white hover:text-primary-200"
-            >
-              Contact
-            </Link>
             
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -376,13 +370,6 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 About
-              </Link>
-              <Link
-                to="/contact"
-                className="block px-4 py-3 text-white hover:text-primary-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
               </Link>
               <div className="px-4 pt-2 pb-3">
                 <Link

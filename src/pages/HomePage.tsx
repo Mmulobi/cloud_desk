@@ -426,41 +426,6 @@ const HomePage = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-700 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="md:flex md:items-center md:justify-between"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="text-center md:text-left md:w-2/3">
-              <h2 className="text-3xl font-bold text-white mb-4">
-                Ready to streamline your business operations?
-              </h2>
-              <p className="text-xl text-primary-100 mb-6 md:mb-0 max-w-2xl">
-                Book a free consultation to discover how Cloud Desk can support your administrative needs and help your business grow.
-              </p>
-            </div>
-            <div className="text-center md:text-right md:w-1/3">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Link
-                  to="/contact"
-                  className="inline-block bg-white text-primary-700 px-8 py-4 rounded-md font-medium text-lg hover:bg-gray-100 transition shadow-lg"
-                >
-                  Get Started Today
-                </Link>
-              </motion.div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 };
