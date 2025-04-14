@@ -13,7 +13,8 @@ import {
   Calculator,
   FileText,
   ClipboardList,
-  Instagram
+  Instagram,
+  UserRound
 } from 'lucide-react';
 import HeroBackground from '../components/HeroBackground';
 
@@ -88,6 +89,12 @@ const HomePage = () => {
       description: 'Social media scheduling, online reputation monitoring, and content curation',
       icon: Instagram,
       link: '/services/digital-presence'
+    },
+    {
+      title: 'Training & Development',
+      description: 'Staff onboarding, training programs, and learning management',
+      icon: UserRound,
+      link: '/services/training-development'
     }
   ];
 

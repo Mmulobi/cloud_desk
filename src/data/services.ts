@@ -304,6 +304,48 @@ const servicesData: ServiceItem[] = [
       'Cost-effective alternative to full-time HR staff'
     ],
     imageSrc: '/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg'
+  },
+  {
+    id: 'training-development',
+    title: 'Training & Development',
+    shortDescription: 'Comprehensive employee training and development programs',
+    description: 'Our Training & Development service helps organizations build a skilled workforce through structured training programs, onboarding support, and continuous learning initiatives.',
+    icon: UserRound,
+    features: [
+      {
+        title: 'Staff Onboarding',
+        description: 'Creating and managing comprehensive onboarding programs, including paperwork processing, orientation scheduling, and initial training coordination.'
+      },
+      {
+        title: 'Training Program Development',
+        description: 'Designing and implementing customized training programs tailored to your organization\'s specific needs and industry requirements.'
+      },
+      {
+        title: 'Learning Management',
+        description: 'Setting up and maintaining learning management systems (LMS) to track employee progress and manage training materials.'
+      },
+      {
+        title: 'Skills Assessment',
+        description: 'Conducting skills gap analyses and creating development plans to address organizational training needs.'
+      },
+      {
+        title: 'Compliance Training',
+        description: 'Managing mandatory training programs, tracking completion, and ensuring regulatory compliance.'
+      },
+      {
+        title: 'Performance Support',
+        description: 'Creating job aids, documentation, and resources to support ongoing employee development and performance improvement.'
+      }
+    ],
+    benefits: [
+      'Streamlined onboarding process for new employees',
+      'Consistent training delivery across the organization',
+      'Improved employee skills and productivity',
+      'Reduced training administration time',
+      'Better tracking of training completion and compliance',
+      'Cost-effective training solutions'
+    ],
+    imageSrc: '/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg'
   }
 ];
 

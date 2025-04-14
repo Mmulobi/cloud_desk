@@ -1,6 +1,20 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, Award, Clock, Briefcase, Target, Eye } from 'lucide-react';
+import { 
+  Users, 
+  Award, 
+  Clock, 
+  Briefcase, 
+  Target, 
+  Eye,
+  ClipboardList,
+  GraduationCap,
+  FileText,
+  Calculator,
+  Mail,
+  HeadphonesIcon,
+  Instagram
+} from 'lucide-react';
 
 // Animation variants
 const fadeInUp = {
@@ -32,6 +46,51 @@ const scaleIn = {
 };
 
 const AboutPage = () => {
+  const teamMembers = [
+    {
+      name: 'George Nandi',
+      role: 'Project Coordinator',
+      icon: ClipboardList,
+      description: 'Expert in project management and workflow optimization'
+    },
+    {
+      name: 'Arthur Manyonge',
+      role: 'Training and Development',
+      icon: GraduationCap,
+      description: 'Specialist in employee training and development programs'
+    },
+    {
+      name: 'Enock Manyonge',
+      role: 'Admin & Data Entry',
+      icon: FileText,
+      description: 'Proficient in data management and administrative processes'
+    },
+    {
+      name: 'Diana Simiyu',
+      role: 'Bookkeeping and Support',
+      icon: Calculator,
+      description: 'Experienced in financial management and accounting support'
+    },
+    {
+      name: 'Wincate Nzau',
+      role: 'Virtual Assistant Support',
+      icon: Mail,
+      description: 'Skilled in virtual assistance and administrative tasks'
+    },
+    {
+      name: 'Lorna Muturi',
+      role: 'Customer Service',
+      icon: HeadphonesIcon,
+      description: 'Expert in customer relations and support services'
+    },
+    {
+      name: 'Nancy Cheptanui',
+      role: 'Digital Presence',
+      icon: Instagram,
+      description: 'Specialist in digital marketing and online presence'
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
@@ -220,6 +279,88 @@ const AboutPage = () => {
                 </p>
               </motion.div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.span 
+              className="text-sm font-semibold tracking-wider text-primary-600 uppercase mb-2 inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              Our Team
+            </motion.span>
+            <motion.h2 
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+            >
+              Get to Know the Experts Behind Our Success
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              Meet our dedicated team of professionals who bring expertise and passion to every project.
+            </motion.p>
+          </motion.div>
+
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+          >
+            {teamMembers.map((member, index) => {
+              const Icon = member.icon;
+              return (
+                <motion.div 
+                  key={index}
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group p-8"
+                  variants={fadeInUp}
+                  whileHover={{ 
+                    y: -10,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  <div className="relative mb-6">
+                    <div className="absolute -top-2 -left-2 w-16 h-16 bg-primary-100 rounded-full opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
+                    <motion.div
+                      className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center relative z-10"
+                      whileHover={{ 
+                        rotate: 360,
+                        transition: { duration: 0.5 }
+                      }}
+                    >
+                      <Icon className="h-6 w-6 text-white" />
+                    </motion.div>
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                    {member.name}
+                  </h3>
+                  <p className="text-primary-600 font-medium mb-3">{member.role}</p>
+                  <p className="text-gray-600">{member.description}</p>
+                </motion.div>
+              );
+            })}
           </motion.div>
         </div>
       </section>

@@ -183,6 +183,25 @@ const Navbar = () => {
                   >
                     Digital Presence
                   </Link>
+                  <Link 
+                    to="/" 
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-50 hover:text-primary-700"
+                    onClick={(e) => {
+                      if (location.pathname === '/') {
+                        e.preventDefault();
+                        const element = document.getElementById('services');
+                        if (element) {
+                          sessionStorage.setItem('selectedService', 'training-development');
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      } else {
+                        sessionStorage.setItem('scrollTarget', 'services');
+                        sessionStorage.setItem('selectedService', 'training-development');
+                      }
+                    }}
+                  >
+                    Training & Development
+                  </Link>
                 </div>
               </div>
             </div>
@@ -361,6 +380,25 @@ const Navbar = () => {
                       }}
                     >
                       Digital Presence
+                    </Link>
+                    <Link
+                      to="/"
+                      className="block px-4 py-2 text-sm text-white hover:text-primary-200"
+                      onClick={() => {
+                        setIsOpen(false);
+                        if (location.pathname === '/') {
+                          const element = document.getElementById('services');
+                          if (element) {
+                            sessionStorage.setItem('selectedService', 'training-development');
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        } else {
+                          sessionStorage.setItem('scrollTarget', 'services');
+                          sessionStorage.setItem('selectedService', 'training-development');
+                        }
+                      }}
+                    >
+                      Training & Development
                     </Link>
                   </div>
                 )}

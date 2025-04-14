@@ -76,6 +76,19 @@ const ServicesPage = () => {
       ]
     },
     {
+      id: 'training-development',
+      title: 'Training & Development',
+      description: 'Build a skilled workforce through comprehensive training programs and development initiatives.',
+      icon: UserRound,
+      features: [
+        'Staff onboarding and orientation',
+        'Training program development',
+        'Learning management system setup',
+        'Skills assessment and development',
+        'Compliance training management'
+      ]
+    },
+    {
       id: 'admin-data-entry',
       title: 'Administrative & Data Entry',
       description: 'Maintain well-organized digital records and systems with our meticulous data entry services.',
